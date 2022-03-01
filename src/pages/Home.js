@@ -1,5 +1,5 @@
-function Footer(props) {
-    return <h1>Footer</h1>;
+function Home(props) {
+    return <h1>Home</h1>;
   }
   
-  export default Footer;
+  export default Home;
