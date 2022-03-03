@@ -6,9 +6,9 @@ function Home(props) {
   const [home, setHome] = useState();
 
   const getHomeData = async() => {
-    const responce= await fetch(props.URL + "home");
-    console.log(responce)
-    const data = await responce.json();
+    const response= await fetch(props.URL + "about");
+    console.log(response)
+    const data = await response.json();
     setHome(data)
     console.log(data)
    
