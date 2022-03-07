@@ -18,9 +18,9 @@ import { useEffect, useState } from "react";
         (
             <div>
                 <h1>let's connect</h1>
-                <a href={contact.email}>
+                {/* <a href={contact.email}> */}
                     <button>Email</button>
-                </a>
+                {/* </a> */}
             </div>
         
         );
