@@ -3,27 +3,29 @@ import { useEffect, useState } from "react";
 
  function Contact(props) {
      console.log(props)
-    const [contact, setContact] = useState();
+    const [contact, setContact] = useState(null);
     const getContactData = async() =>{
-        const response = await fetch(props.URL + "contact");
+        const response = await fetch(props.URL + "about");
         console.log(response)
         const data = await response.json();
         setContact(data);
+        console.log(data)
     };
-    useEffect(() => getContactData());
-    return (
-        <div>
-            {/* {contact.map((ele, index) =>{ */}
-                return(
-                     <div>
-                            <h1>let's connect</h1>
-                            <button></button>
-                        </div>
-                    )
-            {/* //     })
-            // } */}
-        </div>
-    )
-};
+    useEffect(() => getContactData(), []);
 
+    const loaded = () =>{
+        // return contact.map((contact) =>
+        (
+            <div>
+                <h1>let's connect</h1>
+                <a href={contact.email}>
+                    <button>Email</button>
+                </a>
+            </div>
+        
+        );
+    };
+
+    return contact ? loaded() : <h1>Loading...</h1>;
+  }
  export default Contact;
