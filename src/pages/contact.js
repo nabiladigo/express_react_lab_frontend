@@ -12,10 +12,8 @@ import { useEffect, useState } from "react";
         console.log(data)
     };
     useEffect(() => getContactData(), []);
-
-    const loaded = () =>{
         // return contact.map((contact) =>
-        (
+       return  (
             <div>
                 <h1>let's connect</h1>
                 {/* <a href={contact.email}> */}
@@ -25,7 +23,4 @@ import { useEffect, useState } from "react";
         
         );
     };
-
-    return contact ? loaded() : <h1>Loading...</h1>;
-  }
  export default Contact;
